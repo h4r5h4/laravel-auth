@@ -29,7 +29,7 @@
         "socialiteproviders/37signals": "^3.0",
         "socialiteproviders/generators": "^2.0",
         "socialiteproviders/instagram": "^3.0",
-        "socialiteproviders/twitch": "^3.0",
+        "socialiteproviders/twitch": "^5.0",
         "socialiteproviders/youtube": "^3.0"
     },
     "require-dev": {

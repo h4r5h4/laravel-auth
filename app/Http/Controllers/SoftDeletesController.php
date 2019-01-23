@@ -28,7 +28,7 @@ class SoftDeletesController extends Controller
      */
     public static function getDeletedUser($id)
     {
-        $user = User::onlyTrashed()->where('id', $id)->get();
+        $user = User::withTrashed()->where('id', $id)->get();
         if (count($user) != 1) {
             return redirect('/users/deleted/')->with('error', trans('usersmanagement.errorUserNotFound'));
         }
@@ -43,7 +43,7 @@ class SoftDeletesController extends Controller
      */
     public function index()
     {
-        $users = User::onlyTrashed()->get();
+        $users = User::withTrashed()->get();
         $roles = Role::all();
 
         return View('usersmanagement.show-deleted-users', compact('users', 'roles'));
